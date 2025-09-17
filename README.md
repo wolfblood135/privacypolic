@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Otomasyon</title>
+<style>
+    body { font-family: Arial, sans-serif; background-color: #f2f2f2; color: #333; margin: 0; padding: 0; }
+    header { background-color: #405de6; color: white; padding: 20px; text-align: center; }
+    main { padding: 30px; max-width: 600px; margin: auto; }
+    a { color: #405de6; text-decoration: none; cursor: pointer; }
+    a:hover { text-decoration: underline; }
+    .warning { background-color: #ffdddd; padding: 15px; border-left: 5px solid #f44336; margin-bottom: 20px; }
+    /* Modal */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+             background-color: rgba(0,0,0,0.6); }
+    .modal-content { background-color: #fff; margin: 10% auto; padding: 20px; border-radius: 5px; max-width: 800px; }
+    .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .close:hover { color: #000; }
+</style>
+</head>
+<body>
+<header>
+    <h1>Instagram Otomasyon</h1>
+</header>
+<main>
+    <div class="warning">
+        <strong>Uyarı:</strong> Bu site sadece kendi kullanımın içindir. Başka hesaplar için kullanmayın.
+    </div>
+    <p>Bu uygulama Colab üzerinden Instagram API ile post paylaşım otomasyonu yapar.</p>
+    <p><a id="privacyLink">Privacy Policy'i görüntüle</a></p>
+</main>
+
+<!-- Modal -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>Bu site ve uygulama yalnızca kişisel kullanım içindir. Kullanıcı verileri toplanmaz, paylaşılmaz veya üçüncü taraflarla kullanılmaz.</p>
+        <p>Tüm Instagram API işlemleri sadece kendi hesabın üzerinden gerçekleştirilir. Başka hesaplar üzerinde herhangi bir otomatik işlem yapılması önerilmez.</p>
+    </div>
+</div>
+
+<script>
+    // Modal açma/kapatma
+    const modal = document.getElementById("privacyModal");
+    const link = document.getElementById("privacyLink");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    link.onclick = () => { modal.style.display = "block"; }
+    closeBtn.onclick = () => { modal.style.display = "none"; }
+    window.onclick = (event) => { if(event.target == modal) modal.style.display = "none"; }
+</script>
+</body>
+</html>
